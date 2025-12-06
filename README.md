@@ -1,1 +1,184 @@
-# MJF-1B-Parkinsons-Disease
+# MJF-1B Parkinsons Freezing of Gait Prediction 
+
+### 👥 **Team Members**
+
+**Example:**
+
+| Name                      | GitHub Handle 
+|---------------------------|-------------------------
+| Paulene Patrisha Pare     | @PaulenePatrishaPare
+| Helen Ton                 | @heleeon     
+| Irene Chang               | @rose413  
+| Maria Lopez               | @mitchizepic 
+| Wenting Lu                | @wlu32    
+
+---
+
+## 🎯 **Project Highlights**
+
+Developed a machine learning pipeline using XGBoost and Random Forest classifiers to detect gait events and early signs of Freezing of Gait (FoG) in Parkinson’s patients using wearable sensor data.
+Achieved 82% accuracy and strong ROC–AUC performance, demonstrating the potential of accelerometer-based models to support objective mobility assessment.
+Generated insights into movement irregularity, energy patterns, and rhythmicity changes that occur during FoG-related behaviors such as Start Hesitation.
+Implemented a complete pipeline including signal filtering, windowing, feature engineering (time + frequency domain), TSFresh extraction, and model evaluation, addressing real-world constraints in sensor noise, class imbalance, and short-duration events.
+
+---
+
+## 👩🏽‍💻 **Setup and Installation**
+
+HOW TO CLONE THE REPOSITORY 
+
+Open Terminal (Mac/Linux) or Git Bash (Windows).
+Run this command:
+git clone https://github.com/heleeon/MJF-1B-Parkinsons-Disease.git
+
+Move into the project folder:
+cd MJF-1B-Parkinsons-Disease
+
+You now have a full local copy of the repo on your machine.
+
+HOW TO EDIT THE FILE 
+
+Use VS Code
+Open VS Code
+Go to File → Open Folder
+Select the cloned folder:
+ MJF-1B-Parkinsons-Disease/
+You can now edit:
+notebooks (.ipynb)
+scripts (.py)
+README (README.md)
+any other files
+
+Use Jupyter Notebook 
+Inside the repo:
+jupyter notebook
+Then open the notebook file you want to edit.
+
+HOW TO SAVE AND UPDATE EDITS ON GITHUB 
+Once you edit files locally, run:
+git add .
+git commit -m "Updated README and added new features"
+git push
+
+This requires:
+You to be logged into GitHub
+You to have permission to push to the repo (if it’s your repo, yes; if not, you need to fork it first)
+
+If you don’t have push permissions:
+If you get a “permission denied” error:
+Click Fork in GitHub
+Clone your version of the repo:
+git clone https://github.com/YOUR_USERNAME/MJF-1B-Parkinsons-Disease.git
+Edit locally
+Push changes to your fork
+Submit a Pull Request if you want the owner to merge your edits
+
+---
+
+## 🏗️ **Project Overview**
+
+This project was completed as part of the Break Through Tech AI Studio, where students partner with an industry host to solve real-world AI/ML problems.
+Our host company focuses on health technology and mobility assessment, providing the challenge of identifying gait disruptions from wearable sensors.
+Parkinson’s Freezing of Gait is a major cause of falls and loss of independence. Early and accurate detection is crucial for monitoring disease progression, improving therapies, and supporting daily mobility.
+This project builds a fully reproducible ML workflow capable of transforming raw accelerometer signals into predictions of clinically meaningful gait events.
+
+---
+
+## 📊 **Data Exploration**
+
+Dataset Description
+Sources: Defog and Tdcsfog datasets
+Format: 3-axis accelerometer data with event labels (Normal, Walking, Turn, Start Hesitation)
+Size: ~7k–30k windows depending on preprocessing
+
+Challenges:
+Class imbalance
+Variable signal quality
+Short-duration events
+Need for alignment with event timestamps
+
+EDA Insights
+FoG-related events show lower movement energy, less rhythmic patterns, and higher spectral entropy.
+Turns exhibit larger variability in acceleration magnitude.
+Start Hesitation shows subtle but detectable irregularities in frequency content.
+
+Visualizations Included
+Raw vs. band-pass–filtered signals
+Distribution plots of energy, entropy, freezing index
+Correlation heatmaps
+Event-wise scatterplots
+
+---
+
+## 🧠 **Model Development**
+Models Used
+Random Forest – strong baseline for tabular sensor features
+XGBoost – top-performing model across most metrics
+SVM – comparison baseline
+CNN (optional exploration) – for sequence-based modeling
+
+Feature Engineering
+800+ combined features from:
+Time-domain statistics
+Frequency-domain metrics
+Freezing Index
+Energy + entropy
+TSFresh automated features
+Cross-axis correlations
+
+Training Setup
+Train/test split with stratification
+Evaluation metrics: Accuracy, Macro F1, ROC–AUC
+Baseline established using majority-class classifier
+
+
+---
+
+## 📈 **Results & Key Findings**
+Insights
+FoG-associated behaviors show consistent shifts in energy, entropy, and rhythmicity.
+Feature importance reveals that vertical-axis variability and mid-frequency energy bands are key indicators of gait instability.
+ROC curves demonstrate strong class separability for Normal and Start Hesitation.
+
+Visualizations Included
+Confusion matrices
+ROC curves (model comparison)
+Feature importance plots
+Distribution and scatter plots
+
+---
+
+## 🚀 **Next Steps**
+
+Explore different models
+Reduce the size of the dataset
+Improve and develop the features 
+Create more visuals to understand the data 
+Optimize the model parameters
+Aim for higher accuracy, precision, f1, and recall scores
+
+---
+
+## 📝 **License**
+
+This project is licensed under the MIT License.
+
+---
+
+## 📄 **References** (Optional but encouraged)
+
+Kaggle Parkinson’s FoG datasets
+TSFresh Feature Extraction Library Documentation
+XGBoost and scikit-learn documentation
+
+---
+
+## 🙏 **Acknowledgements** (Optional but encouraged)
+
+Thank you to:
+Harshini Donepudi, our AI Coach 
+Seth Haney and Barbara Marebwa, our Challenge Advisors 
+Break Through Tech AI teaching assistants
+for all their support in our AI Studio project! 
+
+##
